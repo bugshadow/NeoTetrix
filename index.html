@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeoTetrix - Le Jeu de Puzzle Futuriste</title>
+    
+    <!-- Balises SEO améliorées -->
+    <meta name="description" content="NeoTetrix - Une réinterprétation futuriste de Tetris avec effets néon, modes de jeu variés et power-ups uniques. Jouez en mode Classique, Challenge ou Speed!">
+    <meta name="keywords" content="tetris, jeu, puzzle, futuriste, arcade, jeu vidéo, HTML5, JavaScript">
+    <meta name="author" content="Omar Bouhaddach">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bugshadow.github.io/tetris/">
+    <meta property="og:title" content="NeoTetrix - Le Jeu de Puzzle Futuriste">
+    <meta property="og:description" content="NeoTetrix - Une réinterprétation futuriste de Tetris avec effets néon, modes de jeu variés et power-ups uniques. Jouez en mode Classique, Challenge ou Speed!">
+    <meta property="og:image" content="https://media.giphy.com/media/5Tndtit6LsZmE/giphy.gif">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://bugshadow.github.io/tetris/">
+    <meta property="twitter:title" content="NeoTetrix - Le Jeu de Puzzle Futuriste">
+    <meta property="twitter:description" content="NeoTetrix - Une réinterprétation futuriste de Tetris avec effets néon, modes de jeu variés et power-ups uniques. Jouez en mode Classique, Challenge ou Speed!">
+    <meta property="twitter:image" content="https://media.giphy.com/media/5Tndtit6LsZmE/giphy.gif">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDgiIGhlaWdodD0iNDgiIHZpZXdCb3g9IjAgMCA0OCA0OCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8c3R5bGU+CiAgICAuYmxvY2sgewogICAgICBhbmltYXRpb246IGdsb3cgMnMgZWFzZS1pbi1vdXQgaW5maW5pdGUgYWx0ZXJuYXRlOwogICAgfQogICAgQGtleWZyYW1lcyBnbG93IHsKICAgICAgZnJvbSB7IGZpbHRlcjogZHJvcC1zaGFkb3coMCAwIDJweCAjZmYwMGZmKTsgfQogICAgICB0byB7IGZpbHRlcjogZHJvcC1zaGFkb3coMCAwIDhweCAjMTVlZGEzKTsgfQogICAgfQogIDwvc3R5bGU+CiAgPGcgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMTVlZGEzIiBzdHJva2Utd2lkdGg9IjEuNSI+CiAgICA8cmVjdCBjbGFzcz0iYmxvY2siIHg9IjQiIHk9IjQiIHdpZHRoPSIxMCIgaGVpZ2h0PSIxMCIgZmlsbD0iIzJlMDI2ZCIgLz4KICAgIDxyZWN0IGNsYXNzPSJibG9jayIgeD0iMTQiIHk9IjQiIHdpZHRoPSIxMCIgaGVpZ2h0PSIxMCIgZmlsbD0iIzJlMDI2ZCIgLz4KICAgIDxyZWN0IGNsYXNzPSJibG9jayIgeD0iMjQiIHk9IjQiIHdpZHRoPSIxMCIgaGVpZ2h0PSIxMCIgZmlsbD0iIzJlMDI2ZCIgLz4KICAgIDxyZWN0IGNsYXNzPSJibG9jayIgeD0iMzQiIHk9IjQiIHdpZHRoPSIxMCIgaGVpZ2h0PSIxMCIgZmlsbD0iIzJlMDI2ZCIgLz4KICAgIDxyZWN0IGNsYXNzPSJibG9jayIgeD0iNCIgeT0iMTQiIHdpZHRoPSIxMCIgaGVpZ2h0PSIxMCIgZmlsbD0iIzJlMDI2ZCIgLz4KICAgIDxyZWN0IGNsYXNzPSJibG9jayIgeD0iMTQiIHk9IjE0IiB3aWR0aD0iMTAiIGhlaWdodD0iMTAiIGZpbGw9IiNmZjAwZmYiIC8+CiAgICA8cmVjdCBjbGFzcz0iYmxvY2siIHg9IjI0IiB5PSIxNCIgd2lkdGg9IjEwIiBoZWlnaHQ9IjEwIiBmaWxsPSIjZmYwMGZmIiAvPgogICAgPHJlY3QgY2xhc3M9ImJsb2NrIiB4PSIzNCIgeT0iMTQiIHdpZHRoPSIxMCIgaGVpZ2h0PSIxMCIgZmlsbD0iIzJlMDI2ZCIgLz4KICAgIDxyZWN0IGNsYXNzPSJibG9jayIgeD0iNCIgeT0iMjQiIHdpZHRoPSIxMCIgaGVpZ2h0PSIxMCIgZmlsbD0iIzJlMDI2ZCIgLz4KICAgIDxyZWN0IGNsYXNzPSJibG9jayIgeD0iMTQiIHk9IjI0IiB3aWR0aD0iMTAiIGhlaWdodD0iMTAiIGZpbGw9IiNmZjAwZmYiIC8+CiAgICA8cmVjdCBjbGFzcz0iYmxvY2siIHg9IjI0IiB5PSIyNCIgd2lkdGg9IjEwIiBoZWlnaHQ9IjEwIiBmaWxsPSIjMmUwMjZkIiAvPgogICAgPHJlY3QgY2xhc3M9ImJsb2NrIiB4PSIzNCIgeT0iMjQiIHdpZHRoPSIxMCIgaGVpZ2h0PSIxMCIgZmlsbD0iIzJlMDI2ZCIgLz4KICAgIDxyZWN0IGNsYXNzPSJibG9jayIgeD0iNCIgeT0iMzQiIHdpZHRoPSIxMCIgaGVpZ2h0PSIxMCIgZmlsbD0iIzJlMDI2ZCIgLz4KICAgIDxyZWN0IGNsYXNzPSJibG9jayIgeD0iMTQiIHk9IjM0IiB3aWR0aD0iMTAiIGhlaWdodD0iMTAiIGZpbGw9IiMyZTAyNmQiIC8+CiAgICA8cmVjdCBjbGFzcz0iYmxvY2siIHg9IjI0IiB5PSIzNCIgd2lkdGg9IjEwIiBoZWlnaHQ9IjEwIiBmaWxsPSIjMmUwMjZkIiAvPgogICAgPHJlY3QgY2xhc3M9ImJsb2NrIiB4PSIzNCIgeT0iMzQiIHdpZHRoPSIxMCIgaGVpZ2h0PSIxMCIgZmlsbD0iIzJlMDI2ZCIgLz4KICA8L2c+Cjwvc3ZnPg==" />
+    <link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDgiIGhlaWdodD0iNDgiIHZpZXdCb3g9IjAgMCA0OCA0OCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8c3R5bGU+CiAgICAuYmxvY2sgewogICAgICBhbmltYXRpb246IGdsb3cgMnMgZWFzZS1pbi1vdXQgaW5maW5pdGUgYWx0ZXJuYXRlOwogICAgfQogICAgQGtleWZyYW1lcyBnbG93IHsKICAgICAgZnJvbSB7IGZpbHRlcjogZHJvcC1zaGFkb3coMCAwIDJweCAjZmYwMGZmKTsgfQogICAgICB0byB7IGZpbHRlcjogZHJvcC1zaGFkb3coMCAwIDhweCAjMTVlZGEzKTsgfQogICAgfQogIDwvc3R5bGU+CiAgPGcgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMTVlZGEzIiBzdHJva2Utd2lkdGg9IjEuNSI+CiAgICA8cmVjdCBjbGFzcz0iYmxvY2siIHg9IjQiIHk9IjQiIHdpZHRoPSIxMCIgaGVpZ2h0PSIxMCIgZmlsbD0iIzJlMDI2ZCIgLz4KICAgIDxyZWN0IGNsYXNzPSJibG9jayIgeD0iMTQiIHk9IjQiIHdpZHRoPSIxMCIgaGVpZ2h0PSIxMCIgZmlsbD0iIzJlMDI2ZCIgLz4KICAgIDxyZWN0IGNsYXNzPSJibG9jayIgeD0iMjQiIHk9IjQiIHdpZHRoPSIxMCIgaGVpZ2h0PSIxMCIgZmlsbD0iIzJlMDI2ZCIgLz4KICAgIDxyZWN0IGNsYXNzPSJibG9jayIgeD0iMzQiIHk9IjQiIHdpZHRoPSIxMCIgaGVpZ2h0PSIxMCIgZmlsbD0iIzJlMDI2ZCIgLz4KICAgIDxyZWN0IGNsYXNzPSJibG9jayIgeD0iNCIgeT0iMTQiIHdpZHRoPSIxMCIgaGVpZ2h0PSIxMCIgZmlsbD0iIzJlMDI2ZCIgLz4KICAgIDxyZWN0IGNsYXNzPSJibG9jayIgeD0iMTQiIHk9IjE0IiB3aWR0aD0iMTAiIGhlaWdodD0iMTAiIGZpbGw9IiNmZjAwZmYiIC8+CiAgICA8cmVjdCBjbGFzcz0iYmxvY2siIHg9IjI0IiB5PSIxNCIgd2lkdGg9IjEwIiBoZWlnaHQ9IjEwIiBmaWxsPSIjZmYwMGZmIiAvPgogICAgPHJlY3QgY2xhc3M9ImJsb2NrIiB4PSIzNCIgeT0iMTQiIHdpZHRoPSIxMCIgaGVpZ2h0PSIxMCIgZmlsbD0iIzJlMDI2ZCIgLz4KICAgIDxyZWN0IGNsYXNzPSJibG9jayIgeD0iNCIgeT0iMjQiIHdpZHRoPSIxMCIgaGVpZ2h0PSIxMCIgZmlsbD0iIzJlMDI2ZCIgLz4KICAgIDxyZWN0IGNsYXNzPSJibG9jayIgeD0iMTQiIHk9IjI0IiB3aWR0aD0iMTAiIGhlaWdodD0iMTAiIGZpbGw9IiNmZjAwZmYiIC8+CiAgICA8cmVjdCBjbGFzcz0iYmxvY2siIHg9IjI0IiB5PSIyNCIgd2lkdGg9IjEwIiBoZWlnaHQ9IjEwIiBmaWxsPSIjMmUwMjZkIiAvPgogICAgPHJlY3QgY2xhc3M9ImJsb2NrIiB4PSIzNCIgeT0iMjQiIHdpZHRoPSIxMCIgaGVpZ2h0PSIxMCIgZmlsbD0iIzJlMDI2ZCIgLz4KICAgIDxyZWN0IGNsYXNzPSJibG9jayIgeD0iNCIgeT0iMzQiIHdpZHRoPSIxMCIgaGVpZ2h0PSIxMCIgZmlsbD0iIzJlMDI2ZCIgLz4KICAgIDxyZWN0IGNsYXNzPSJibG9jayIgeD0iMTQiIHk9IjM0IiB3aWR0aD0iMTAiIGhlaWdodD0iMTAiIGZpbGw9IiMyZTAyNmQiIC8+CiAgICA8cmVjdCBjbGFzcz0iYmxvY2siIHg9IjI0IiB5PSIzNCIgd2lkdGg9IjEwIiBoZWlnaHQ9IjEwIiBmaWxsPSIjMmUwMjZkIiAvPgogICAgPHJlY3QgY2xhc3M9ImJsb2NrIiB4PSIzNCIgeT0iMzQiIHdpZHRoPSIxMCIgaGVpZ2h0PSIxMCIgZmlsbD0iIzJlMDI2ZCIgLz4KICA8L2c+Cjwvc3ZnPg==" />
+    
+    <!-- CSS et Font Awesome -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    
+    <!-- Préchargement des polices -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap">
+    
+    <!-- PWA support -->
+    <meta name="theme-color" content="#2e026d">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Tetris Ultimate">
+</head>
+<body>
+    <!-- Fond d'étoiles animées -->
+    <div class="bg-stars" id="stars-container"></div>
+    
+    <div id="game-container">
+        <!-- Écran d'accueil -->
+        <div id="menu" class="screen active">
+            <h1>NeoTetrix</h1>
+            <button id="start-button"><i class="fas fa-play"></i> JOUER</button>
+            <div class="mode-selector">
+                <button id="mode-classic" class="mode-button active">CLASSIQUE</button>
+                <button id="mode-challenge" class="mode-button">CHALLENGE</button>
+                <button id="mode-speed" class="mode-button">VITESSE</button>
+            </div>
+            <button id="instructions-button"><i class="fas fa-book"></i> INSTRUCTIONS</button>
+            <button id="high-scores-button"><i class="fas fa-trophy"></i> SCORES</button>
+            
+            <!-- GitHub Link -->
+            <a href="https://github.com/bugshadow" target="_blank" class="github-link">
+                <i class="fab fa-github"></i> BugShadow
+            </a>
+        </div>
+        
+        <!-- Écran d'instructions -->
+        <div id="instructions" class="screen">
+            <h2>Comment Jouer</h2>
+            <div class="instructions-content">
+                <p>Utilisez les touches fléchées pour déplacer et faire pivoter les pièces :</p>
+                <ul>
+                    <li><i class="fas fa-arrow-left"></i> : Déplacer à gauche</li>
+                    <li><i class="fas fa-arrow-right"></i> : Déplacer à droite</li>
+                    <li><i class="fas fa-arrow-down"></i> : Accélérer la descente</li>
+                    <li><i class="fas fa-arrow-up"></i> : Faire pivoter la pièce</li>
+                    <li><i class="fas fa-space-shuttle"></i> Espace : Faire tomber la pièce instantanément</li>
+                    <li><i class="fas fa-pause"></i> P : Mettre en pause</li>
+                    <li><i class="fas fa-sign-out-alt"></i> Esc : Pause/Menu</li>
+                </ul>
+                <p>Sur mobile, utilisez les boutons tactiles ou balayez l'écran</p>
+                
+                <h3>Modes de jeu</h3>
+                <ul>
+                    <li><strong>Classique</strong> : Le Tetris traditionnel, complétez des lignes pour marquer des points.</li>
+                    <li><strong>Challenge</strong> : Des défis aléatoires apparaissent, comme des blocs à détruire ou un temps limité.</li>
+                    <li><strong>Vitesse</strong> : Le jeu commence rapide et devient encore plus fou! Combien de temps tiendrez-vous?</li>
+                </ul>
+                
+                <h3>Pouvoirs spéciaux</h3>
+                <ul>
+                    <li><i class="fas fa-bomb"></i> <strong>Bombe</strong> : Détruit les blocs autour du point d'impact</li>
+                    <li><i class="fas fa-magic"></i> <strong>Transformation</strong> : Change la forme de la pièce actuelle</li>
+                    <li><i class="fas fa-clock"></i> <strong>Ralenti</strong> : Ralentit temporairement la descente des pièces</li>
+                    <li><i class="fas fa-eraser"></i> <strong>Effaceur</strong> : Supprime une ligne complète</li>
+                </ul>
+            </div>
+            <button id="back-button"><i class="fas fa-home"></i> RETOUR AU MENU</button>
+        </div>
+        
+        <!-- Écran des meilleurs scores -->
+        <div id="high-scores-screen" class="screen">
+            <h2>Meilleurs Scores</h2>
+            <div id="high-scores-tabs">
+                <button class="score-tab active" data-mode="classic">Classique</button>
+                <button class="score-tab" data-mode="challenge">Challenge</button>
+                <button class="score-tab" data-mode="speed">Vitesse</button>
+            </div>
+            <div id="high-scores-list" class="high-scores">
+                <!-- Généré dynamiquement en JS -->
+            </div>
+            <button id="back-from-scores-button"><i class="fas fa-home"></i> RETOUR AU MENU</button>
+        </div>
+        
+        <!-- Écran de jeu -->
+        <div id="game" class="screen">
+            <div class="game-info">
+                <div class="score-container">
+                    <p>Score: <span id="score">0</span></p>
+                    <p>Niveau: <span id="level">1</span></p>
+                    <p id="mode-display">Mode: <span>Classique</span></p>
+                    <button id="pause-button" class="icon-button"><i class="fas fa-pause"></i></button>
+                </div>
+                <div class="next-piece-container">
+                    <p>Suivant:</p>
+                    <canvas id="next-piece" width="100" height="100"></canvas>
+                    <div id="power-up-display">
+                        <p>Pouvoir: <span id="current-power">Aucun</span></p>
+                        <div id="power-icon"></div>
+                    </div>
+                </div>
+                <div id="challenge-container" style="display: none;">
+                    <p id="challenge-text">Défi: Aucun</p>
+                    <div class="timer-container">
+                        <div class="timer-bar" id="challenge-timer"></div>
+                    </div>
+                </div>
+            </div>
+            <canvas id="tetris" width="300" height="600"></canvas>
+            
+            <!-- Contrôles tactiles pour mobile -->
+            <div id="mobile-controls">
+                <button id="left-button" class="control-button"><i class="fas fa-arrow-left"></i></button>
+                <div class="middle-controls">
+                    <button id="rotate-button" class="control-button"><i class="fas fa-redo"></i></button>
+                    <button id="down-button" class="control-button"><i class="fas fa-arrow-down"></i></button>
+                </div>
+                <button id="right-button" class="control-button"><i class="fas fa-arrow-right"></i></button>
+                <button id="drop-button" class="control-button wide-button"><i class="fas fa-angle-double-down"></i></button>
+                <button id="mobile-pause-button" class="control-button wide-button"><i class="fas fa-pause"></i> PAUSE</button>
+                <button id="power-button" class="control-button wide-button"><i class="fas fa-bolt"></i> POUVOIR</button>
+            </div>
+            
+            <!-- GitHub Corner -->
+            <a href="https://github.com/bugshadow" class="github-corner" aria-label="View source on GitHub" target="_blank">
+                <svg width="80" height="80" viewBox="0 0 250 250" style="fill:var(--secondary-color); color:var(--background-color); position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true">
+                    <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+                    <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+                    <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path>
+                </svg>
+            </a>
+        </div>
+        
+        <!-- Écran de game over -->
+        <div id="game-over" class="screen">
+            <h2>GAME OVER</h2>
+            <p>Score final: <span id="final-score">0</span></p>
+            <p>Mode: <span id="final-mode">Classique</span></p>
+            <button id="retry-button"><i class="fas fa-redo"></i> REJOUER</button>
+            <button id="menu-button-game-over" class="menu-button"><i class="fas fa-home"></i> MENU</button>
+            <!-- Les meilleurs scores seront injectés ici -->
+            <div class="creator-info">
+                <p>Créé par <a href="https://github.com/bugshadow" target="_blank">BugShadow <i class="fab fa-github"></i></a></p>
+            </div>
+        </div>
+        
+        <!-- Écran de victoire -->
+        <div id="win" class="screen">
+            <h2>VICTOIRE!</h2>
+            <p>Score final: <span id="win-score">0</span></p>
+            <p>Mode: <span id="win-mode">Classique</span></p>
+            <button id="next-level-button"><i class="fas fa-arrow-right"></i> NIVEAU SUIVANT</button>
+            <button id="menu-button" class="menu-button"><i class="fas fa-home"></i> MENU</button>
+            <!-- Les meilleurs scores seront injectés ici -->
+            <div class="creator-info">
+                <p>Créé par <a href="https://github.com/bugshadow" target="_blank">BugShadow <i class="fab fa-github"></i></a></p>
+            </div>
+        </div>
+        
+        <!-- Écran de pause -->
+        <div id="pause-screen" class="screen">
+            <h2>PAUSE</h2>
+            <button id="resume-button"><i class="fas fa-play"></i> CONTINUER</button>
+            <button id="restart-button"><i class="fas fa-redo"></i> RECOMMENCER</button>
+            <button id="exit-button"><i class="fas fa-home"></i> MENU PRINCIPAL</button>
+            <div class="creator-info">
+                <p>Créé par <a href="https://github.com/bugshadow" target="_blank">BugShadow <i class="fab fa-github"></i></a></p>
+            </div>
+        </div>
+    </div>
+    
+    <script src="tetris.js"></script>
+</body>
+</html> 
