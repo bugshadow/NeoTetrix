@@ -52,6 +52,20 @@ Tetrix est une version moderne du classique jeu Tetris, offrant une expérience 
 - 🎨 Design moderne : Interface utilisateur attrayante
 - 📱 Responsive : Jouable sur mobile et desktop
 
+## 🎮 Jouer en ligne
+
+<div align="center">
+  
+  ### [🎮 Jouez à NeoTetrix maintenant!](https://neotetrix.vercel.app/)
+  
+  <a href="https://neotetrix.vercel.app/" target="_blank">
+    <img src="https://img.shields.io/badge/Jouer_Maintenant-15EDA3?style=for-the-badge&logoColor=white" alt="Jouer à NeoTetrix"/>
+  </a>
+  
+  Visitez [https://neotetrix.vercel.app/](https://neotetrix.vercel.app/) pour jouer au jeu en ligne!
+  
+</div>
+
 ## 🎯 Modes de Jeu
 
 ```mermaid
@@ -142,6 +156,16 @@ graph TD
   </a>
   <a href="https://github.com/bugshadow" target="_blank">
     <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" />
+  </a>
+</p>
+
+<p align="center">
+  <b>🌐 Retrouvez ce projet sur: </b>
+  <a href="https://github.com/bugshadow" target="_blank">
+    <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" />
+  </a>
+  <a href="https://www.linkedin.com/in/omar-bouhaddach-7420a02b4/" target="_blank">
+    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" />
   </a>
 </p>
 
